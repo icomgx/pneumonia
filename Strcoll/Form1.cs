@@ -30,22 +30,6 @@ namespace Strcoll
         static string url = "http://172.21.0.10:2334/";//IP替换为你局域网IP
         static string qz, ys = "";
 
-
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    string a1 = "#剪刀";
-        //    string[] a11 = new string[] {"石头","剪刀","布"};
-
-        //    for (int i = 0; i < a11.Length; i++)
-        //    {
-        //        if (a1.Contains(a11[i]))
-        //        {
-        //            MessageBox.Show(i + "");
-        //        }
-        //    }
-
-        //   }
-
         void doWork()
         {
             while (true)
@@ -125,13 +109,7 @@ namespace Strcoll
 
             myThread.Start();
             QueryStart(MyTask, url);
-            //string qz, ys;
-            //qz = ys = "";
-            //if (Gets(HttpGet("http://m.medsci.cn/wh.asp"), out qz, out ys) == "0")
-            //{
-            //    lab_qz.Text = qz.Trim();
-            //    lab_ys.Text = ys.Trim();
-            //}
+      
 
 
         }
