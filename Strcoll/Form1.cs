@@ -27,7 +27,7 @@ namespace Strcoll
         private HttpListener m_http_listener = new HttpListener();
         private Thread m_http_thread = null;
         Task MyTask = null;
-        static string url = "http://172.21.0.10:2334/";//IP替换为你局域网IP
+        static string url = "http://192.168.31.177:2334/";//IP替换为你局域网IP
         static string qz, ys = "";
 
         void doWork()
