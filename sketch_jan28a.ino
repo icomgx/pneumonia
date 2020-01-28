@@ -116,8 +116,8 @@ void setup() {
 
 void loop() {
   if (WiFi.status() == WL_CONNECTED) {
-    String GetUrlqz = "http://apiv2.icomgx.cn:2334/?Mode=qz";
-    String GetUrlys = "http://apiv2.icomgx.cn:2334/?Mode=ys";
+    String GetUrlqz = "http://192.168.31.177:2334/?Mode=qz";
+    String GetUrlys = "http://192.168.31.177:2334/?Mode=ys";
     http.begin(GetUrlqz);
     int httpCode = http.GET();
     Serial.printf("code = %d\r\n", httpCode);
