@@ -1,6 +1,6 @@
 import requests
 import json
-from flask import Flask, request, make_response
+from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -9,16 +9,19 @@ response = requests.get(url)
 r_text = response.text
 
 
+# 获取第一组数据 现有
 def text1json(text):
     j1son = json.loads(json.loads(text)["data"])["chinaTotal"]
     return j1son
 
 
+# 获取第二组数据 增加
 def text2json(text):
     j2son = json.loads(json.loads(text)["data"])["chinaAdd"]
     return j2son
 
 
+# 解析数据并生成返回数据
 def result_json(text):
     j1son = text1json(r_text)
     j2son = text2json(r_text)
@@ -48,6 +51,7 @@ def r_json():
         return result_str
 
 
+# 主入口
 if __name__ == '__main__':
     try:
         app.run(host='0.0.0.0', port='2334', debug=True)
