@@ -1,7 +1,7 @@
 # pneumonia
 ## 新型冠状肺炎情况实时显示  
 ## 使用库requests，json，flask  
-## sketch_jan28a.ino 是显示屏的源程序  
+## sketch_jan28a.ino 是显示屏的源程序  如想使用视频中演示效果 请替换 u8g2库
 ### 2020-02-13：  
 1.更换了数据  
 2.C#服务端更换为python服务端  
