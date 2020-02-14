@@ -47,7 +47,7 @@ def r_json():
     if request.method == 'GET':
         ip = request.remote_addr
         result_str = result_json(r_text)
-        print(f'[system]来自{ip}的GET请求：s_member_phone;return:{result_str}')
+        print(f'\r\n[system]来自{ip}的GET请求：s_member_phone;return:{result_str}')
         return result_str
 
 
