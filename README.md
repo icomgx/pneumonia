@@ -2,7 +2,8 @@
 ## 新型冠状肺炎情况实时显示  
 ## 使用库requests，json，flask  
 ## sketch_jan28a.ino 是显示屏的源程序  如想使用视频中演示效果 请替换 u8g2库  ArduinoJson库请使用5.x.x版本  
-
+## 没有环境的同学也可以B站私信我要服务器地址或者直接使用 乐鑫官方工具烧录 sketch_jan28a.bin 地址起始位置0x00000  
+## bilibili:https://space.bilibili.com/23106193
 #### 服务端接口定义：GET  /json
 ####  返回结果
 
