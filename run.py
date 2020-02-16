@@ -10,21 +10,21 @@ r_text = response.text
 
 
 # 获取第一组数据 现有
-def text1json(text):
-    j1son = json.loads(json.loads(text)["data"])["chinaTotal"]
+def text1json(j1text):
+    j1son = json.loads(json.loads(j1text)["data"])["chinaTotal"]
     return j1son
 
 
 # 获取第二组数据 增加
-def text2json(text):
-    j2son = json.loads(json.loads(text)["data"])["chinaAdd"]
+def text2json(j2text):
+    j2son = json.loads(json.loads(j2text)["data"])["chinaAdd"]
     return j2son
 
 
 # 解析数据并生成返回数据
 def result_json(text):
-    j1son = text1json(r_text)
-    j2son = text2json(r_text)
+    j1son = text1json(text)
+    j2son = text2json(text)
     # 现有数据
     confirm = j1son["confirm"]  # 确诊
     suspect = j1son["suspect"]  # 疑似
@@ -36,8 +36,8 @@ def result_json(text):
     dead_add = j2son["dead"]
     heal_add = j2son["heal"]
     result_j2 = {"code": "0", "confirm": str(confirm), "suspect": str(suspect), "dead": str(dead), "heal": str(heal)
-                 , "confirm_add": str(confirm_add), "suspect_add": str(suspect_add), "dead_add": str(dead_add)
-                 , "heal_add": str(heal_add)
+        , "confirm_add": str(confirm_add), "suspect_add": str(suspect_add), "dead_add": str(dead_add)
+        , "heal_add": str(heal_add)
                  }
     return json.dumps(result_j2)
 
