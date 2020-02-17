@@ -5,8 +5,6 @@ from flask import Flask, request
 app = Flask(__name__)
 
 url = 'https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5'
-response = requests.get(url)
-r_text = response.text
 
 
 # 获取第一组数据 现有
@@ -22,9 +20,11 @@ def text2json(j2text):
 
 
 # 解析数据并生成返回数据
-def result_json(text):
-    j1son = text1json(text)
-    j2son = text2json(text)
+def result_json():
+    response = requests.get(url)
+    r_text = response.text
+    j1son = text1json(r_text)
+    j2son = text2json(r_text)
     # 现有数据
     confirm = j1son["confirm"]  # 确诊
     suspect = j1son["suspect"]  # 疑似
@@ -46,8 +46,8 @@ def result_json(text):
 def r_json():
     if request.method == 'GET':
         ip = request.remote_addr
-        result_str = result_json(r_text)
-        print(f'\r\n[system]来自{ip}的GET请求：s_member_phone;return:{result_str}')
+        result_str = result_json()
+        print(f'\r\n[system]来自{ip}的GET请求：r_json;return:{result_str}')
         return result_str
 
 
