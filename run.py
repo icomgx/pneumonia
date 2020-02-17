@@ -26,10 +26,10 @@ def result_json():
     j1son = text1json(r_text)
     j2son = text2json(r_text)
     # 现有数据
-    confirm = j1son["confirm"]  # 确诊
     suspect = j1son["suspect"]  # 疑似
     dead = j1son["dead"]  # 死亡
     heal = j1son["heal"]  # 治愈
+    confirm = (j1son["confirm"] - dead - heal)  # 确诊
     # 较昨日增加
     confirm_add = j2son["confirm"]
     suspect_add = j2son["suspect"]
