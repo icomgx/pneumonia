@@ -8,23 +8,23 @@ url = 'https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5'
 
 
 # 获取第一组数据 现有
-def text1json(j1text):
-    j1son = json.loads(json.loads(j1text)["data"])["chinaTotal"]
-    return j1son
+# def text1json(j1text):
+#     j1son = json.loads(json.loads(j1text)["data"])["chinaTotal"]
+#     return j1son
 
 
 # 获取第二组数据 增加
-def text2json(j2text):
-    j2son = json.loads(json.loads(j2text)["data"])["chinaAdd"]
-    return j2son
+# def text2json(j2text):
+#     j2son = json.loads(json.loads(j2text)["data"])["chinaAdd"]
+#     return j2son
 
 
 # 解析数据并生成返回数据
 def result_json():
     response = requests.get(url)
     r_text = response.text
-    j1son = text1json(r_text)
-    j2son = text2json(r_text)
+    j1son = json.loads(json.loads(r_text)["data"])["chinaTotal"]
+    j2son = json.loads(json.loads(r_text)["data"])["chinaAdd"]
     # 现有数据
     suspect = j1son["suspect"]  # 疑似
     dead = j1son["dead"]  # 死亡
